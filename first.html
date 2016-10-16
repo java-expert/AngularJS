@@ -1,0 +1,55 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/
+angular.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('HelloCtrl', function($scope) {
+	alert('helloctrl controller');
+    $scope.name = "John";
+	$scope.countries = [
+						{name: 'France', population: 63.1},
+						{name: 'United Kingdom', population: 61.8},
+						];
+    $scope.getLastName = function(){
+	return "last name";
+	}
+	
+	$scope.shouldWarn = function () {
+		alert(1<2)
+return 1 < 2;
+};
+});
+</script>
+</head>
+<body ng-app="myApp" ng-init="name = 'World'">
+<input type="text" ng-model="name"/>
+<h1>Hello!!!!!!!!!!, {{name}}!</h1>
+
+<div ng-app="myApp1" ng-controller="HelloCtrl">
+Say hello to: <input type="text" ng-model="name"><br>
+<h1>Hello, {{name}}!</h1>
+
+
+<h1>function use : Hello, {{getLastName()}}!</h1>
+---------------------------------------------using ng-repeat-------------------
+<li ng-repeat="country in countries">
+{{country.name}} has population of {{country.population}}
+</li>
+--------------------------------------------------------ngclass use
+<br/>
+<span ng-class="{text-warning}">
+Remaining: {{'111111111111'}}<br/>
+</span>
+<button ng-disabled="shouldWarn()">Send button</button>
+===========================================================================
+</div>
+
+==============================================================
+<div ng-app="qwe" ng-init="thing = {name : 'World',name1:'kkkkkk'}">
+Say hello to: <input type="text" ng-model="thing.name1">
+<h2>Hello, {{thing.name1}}!</h2>
+</div>
+==========================================
+</body>
+</html>
