@@ -122,8 +122,11 @@ ng-model
 ng-controller
 ng-repeat
 ng-disabled
+ng-show
 ng-class
 ng-bind
+ng-hide
+ng-click
 
 
 problems
@@ -162,4 +165,4 @@ The AngularJS framework can be divided into following three major parts -
 	3.  A controller is defined using ng-controller directive. A controller is a JavaScript object containing attributes/properties and functions. 
 	Each controller accepts $scope as a parameter which refers to the application/module that controller is to control.
 	
-	4.  
+	4.  Filters are used to change modify the data and can be clubbed in expression or directives using pipe character.
