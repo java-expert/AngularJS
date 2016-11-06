@@ -3,14 +3,35 @@
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/
 angular.js"></script>
 <script>
-angular.module('firstModule', []).controller('moduleController', function($scope){
-$scope.name = 'nametest';
-});
+var mainApp = angular.module("mainApp", []);
+
+mainApp.factory('MathService', function() {
+            var factory = {};
+            
+            factory.multiply = function(a, b) {
+               return a * b
+            }
+            return factory;
+         });
+
+  mainApp.service('CalcService', function(MathService){
+            this.square = function(a) {
+               return MathService.multiply(a,a);
+            }
+         });
+         
+ mainApp.controller('CalcController', function($scope, CalcService) {
+            $scope.square = function() {
+               $scope.result = CalcService.square($scope.number);
+            }
+         });
 </script>
 </head>
-<body ng-app="firstModule" ng-controller="moduleController">
-<input type="text" ng-model="name"/>
-<h1>Hello!!!!!!!!!!, {{name}}!</h1>
+<div ng-app = "mainApp" ng-controller = "CalcController">
+         <p>Enter a number: <input type = "number" ng-model = "number" /></p>
+         <button ng-click = "square()">X<sup>2</sup></button>
+         <p>Result: {{result}}</p>
+      </div>
 
 
 </body>

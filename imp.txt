@@ -123,6 +123,7 @@ ng-controller
 ng-repeat
 ng-disabled
 ng-class
+ng-bind
 
 
 problems
@@ -136,3 +137,29 @@ to the ng-model directive (for example, ng-model="thing.name").
 5. scope inheritance example
 how many ng-app can be defined
 textarea length example
+
+=====================================================tutorials point
+
+
+The AngularJS Components
+
+The AngularJS framework can be divided into following three major parts -
+
+    ng-app - This directive defines and links an AngularJS application to HTML.
+	<div ng-app = "">
+   ...
+</div>
+
+    ng-model - This directive binds the values of AngularJS application data to HTML input controls.
+	<p>Enter your Name: <input type = "text" ng-model = "name"></p>
+
+    ng-bind - This directive binds the AngularJS Application data to HTML tags.
+	<p>Hello <span ng-bind = "name"></span>!</p>
+	
+	
+	2. The controller function is registered in angular via the angular.module(...).controller(...) function call.
+	
+	3.  A controller is defined using ng-controller directive. A controller is a JavaScript object containing attributes/properties and functions. 
+	Each controller accepts $scope as a parameter which refers to the application/module that controller is to control.
+	
+	4.  
