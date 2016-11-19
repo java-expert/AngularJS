@@ -127,6 +127,7 @@ ng-class
 ng-bind
 ng-hide
 ng-click
+ng-include
 
 
 problems
@@ -166,3 +167,44 @@ The AngularJS framework can be divided into following three major parts -
 	Each controller accepts $scope as a parameter which refers to the application/module that controller is to control.
 	
 	4.  Filters are used to change modify the data and can be clubbed in expression or directives using pipe character.
+	
+	5. AngularJS supports modular approach. Modules are used to separate logics say services, controllers, application etc. and keep the code clean.
+       We define modules in separate js files and name them as per the module.js file
+	   
+	   var mainApp = angular.module("mainApp", []);
+	   Here we've declared an application mainApp module using angular.module function. 
+	   We've passed an empty array to it. This array generally contains dependent modules.
+	   
+	   mainApp.controller("studentController", function($scope) {
+	   we've declared a controller studentController module using mainApp.controller function.
+	   
+	6. Use modules
+		<div ng-app = "mainApp" ng-controller = "studentController">
+   ...
+       <script src = "mainApp.js"></script>
+       <script src = "studentController.js"></script>
+	
+       </div>
+	   
+	7. AngularJS enriches form filling and validation. We can use ng-click to handle AngularJS click on button and use $dirty and $invalid flags
+	to do the validations in seemless way. 
+	
+	Validate data
+
+    8. Following can be used to track error.
+
+    $dirty - states that value has been changed.
+
+    $invalid - states that value entered is invalid.
+
+    $error - states the exact error.
+
+	
+	9. Use novalidate with a form declaration to disable any browser specific validation.
+	
+	10. Using AngularJS, we can embed HTML pages within a HTML page using ng-include directive.
+
+<div ng-app = "" ng-controller = "studentController">
+   <div ng-include = "'main.htm'"></div>
+   <div ng-include = "'subjects.htm'"></div>
+</div>
