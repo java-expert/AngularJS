@@ -219,3 +219,40 @@ ng-view tag simply creates a place holder where a corresponding view (html or ng
 ng-template directive is used to create an html view using script tag. It contains "id" attribute which is used by $routeProvider to map a view with a controller.
 
 $routeProvider is the key service which set the configuration of urls, map them with the corresponding html page or ng-template, and attach a controller with the same.
+
+$routeProvider is defined as a function under config of mainApp module using key as '$routeProvider'.
+================================================================================================================
+>>>>>>>>>>>>Scopes>>>>>>>>>>>>>>>>>>>>>
+
+1. Scope is a special javascript object which plays the role of joining controller with the views. Scope contains the model data. In controllers, model data is accessed via $scope object.
+2. $scope is passed as first argument to controller during its constructor definition.
+3. We can define functions as well in $scope.
+
+
+
+<script>
+   var mainApp = angular.module("mainApp", []);
+   
+   mainApp.controller("shapeController", function($scope) {
+      $scope.message = "In shape controller";
+      $scope.type = "Shape";
+   });
+</script>
+=====================================================================================================================
+>>>>>>>>>>>>Services>>>>>>>>>>>>>>>>>>>>>
+
+1. Scope is a special javascript object which plays the role of joining controller with the views. Scope contains the model data. In controllers, model data is accessed via $scope object.
+2. $scope is passed as first argument to controller during its constructor definition.
+3. We can define functions as well in $scope.
+
+
+
+<script>
+   var mainApp = angular.module("mainApp", []);
+   
+   mainApp.controller("shapeController", function($scope) {
+      $scope.message = "In shape controller";
+      $scope.type = "Shape";
+   });
+</script>
+=====================================================================================================================
