@@ -144,6 +144,10 @@ to the ng-model directive (for example, ng-model="thing.name").
 5. scope inheritance example
 how many ng-app can be defined
 textarea length example
+factory always returns value
+
+mainapp.value vs mainapp.constant ????
+$provide ----provider???????????????
 
 =====================================================tutorials point
 
@@ -252,3 +256,22 @@ $http is used to make ajax call to get the server data. $route is used to define
     > service
 
 =====================================================================================================================
+
+>>>>>>>>DI
+1. Value
+
+         var mainApp = angular.module("mainApp", []);
+         mainApp.value("defaultInput", 5);
+        mainApp.controller('CalcController', function($scope, defaultInput) {
+        $scope.message=defaultInput;
+});
+
+2. factory is a function which is used to return value. 
+//inject the factory "MathService" in a service to utilize the multiply method of factory.
+mainApp.service('CalcService', function(MathService){
+   this.square = function(a) {
+      return MathService.multiply(a,a);
+   }
+});
+
+====================================================================================================================
