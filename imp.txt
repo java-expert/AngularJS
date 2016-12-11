@@ -128,9 +128,12 @@ ng-bind
 ng-hide
 ng-click
 ng-include
+ng-view
+ng-template
 
 
-problems
+problems/in-depth
+ng-app???? empty or value 
 1. scope hierarchy 40,41 page number in pdf book
 2. ng-model="$parent.name">
 3. Avoid direct bindings to scope's properties. Two-way data binding to
@@ -208,3 +211,44 @@ The AngularJS framework can be divided into following three major parts -
    <div ng-include = "'main.htm'"></div>
    <div ng-include = "'subjects.htm'"></div>
 </div>
+
+11. AngularJS supports Single Page Application via multiple views on a single page. To do this AngularJS has provided ng-view and ng-template directives and $routeProvider services
+
+ng-view tag simply creates a place holder where a corresponding view (html or ng-template view) can be placed based on the configuration.
+
+ng-template directive is used to create an html view using script tag. It contains "id" attribute which is used by $routeProvider to map a view with a controller.
+
+$routeProvider is the key service which set the configuration of urls, map them with the corresponding html page or ng-template, and attach a controller with the same.
+
+$routeProvider is defined as a function under config of mainApp module using key as '$routeProvider'.
+================================================================================================================
+>>>>>>>>>>>>Scopes>>>>>>>>>>>>>>>>>>>>>
+
+1. Scope is a special javascript object which plays the role of joining controller with the views. Scope contains the model data. In controllers, model data is accessed via $scope object.
+2. $scope is passed as first argument to controller during its constructor definition.
+3. We can define functions as well in $scope.
+
+
+
+<script>
+   var mainApp = angular.module("mainApp", []);
+   
+   mainApp.controller("shapeController", function($scope) {
+      $scope.message = "In shape controller";
+      $scope.type = "Shape";
+   });
+</script>
+=====================================================================================================================
+>>>>>>>>>>>>Services>>>>>>>>>>>>>>>>>>>>>
+
+1. AngularJS supports the concepts of "Separation of Concerns" using services architecture
+2. Services are normally injected using dependency injection mechanism of AngularJS.
+3. AngularJS provides many inbuilt services for example, $http, $route, $window, $location etc. Each service is responsible for a specific task for example,
+$http is used to make ajax call to get the server data. $route is used to define the routing information and so on. Inbuilt services are always prefixed with $ symbol.
+
+4. There are two ways to create a service.
+
+    > factory
+    > service
+
+=====================================================================================================================
