@@ -17,6 +17,8 @@
          var mainApp = angular.module("mainApp", []);
          mainApp.value("defaultInput", 5);
 		 mainApp.value("defaultInput", 6);
+		 mainApp.constant("defaultInput1", 5);
+		 mainApp.constant("defaultInput1", 6);
         mainApp.controller('CalcController', function($scope, defaultInput) {
         $scope.message=defaultInput;
 });
